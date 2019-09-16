@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: scaff_development
+  database: malagasport
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -80,6 +80,13 @@ test:
 #
 production:
   <<: *default
-  database: scaff_production
+  database: malagasport
   username: scaff
   password: <%= ENV['SCAFF_DATABASE_PASSWORD'] %>
+
+
+staging:
+  <<: *default
+  url: <%= ENV['SCAFF_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  database: malagasport
